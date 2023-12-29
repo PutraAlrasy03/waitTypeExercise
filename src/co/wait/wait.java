@@ -28,6 +28,9 @@ public class wait {
         // Set up waits
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // For explicit waits
 
+        // Set up implicit wait
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS); // Implicit wait with a timeout of 10 seconds
+
         // Step 1: Open the Yahoo login page
         System.out.println("Step 1: Opening Yahoo login page");
         driver.get("https://login.yahoo.com");
@@ -41,7 +44,6 @@ public class wait {
         WebElement nextButton = driver.findElement(By.xpath("//input[@id='login-signin']"));
         System.out.println("Step 3: Clicking 'Next' button");
         nextButton.click();
-
 
         // Step 4: Close the browser
         System.out.println("Step 5: Closing the browser");
